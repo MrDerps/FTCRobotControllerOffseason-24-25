@@ -30,7 +30,7 @@ public class RRTest extends LinearOpMode{
     @Override
     public void runOpMode() {
         // TODO: Check Pose position to ensure it is correct
-        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(11.8, 61.7, Math.toRadians(90)));
+        MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(0, 0, Math.toRadians(90)));
 
         trajectoryAction1 = drive.actionBuilder(drive.pose)
                 // TODO: Change variables to be usd according to Jerry's field
