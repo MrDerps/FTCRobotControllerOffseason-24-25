@@ -54,7 +54,7 @@ public class RRTest extends LinearOpMode{
 
         Actions.runBlocking(
                 new SequentialAction(
-                        trajectoryActionChosen,
+                        trajectoryActionChosen
                 )
         );
     }
