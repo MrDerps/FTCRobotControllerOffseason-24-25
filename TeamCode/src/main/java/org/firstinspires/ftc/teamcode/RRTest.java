@@ -29,13 +29,14 @@ public class RRTest extends LinearOpMode{
     Action trajectoryActionChosen;
     @Override
     public void runOpMode() {
+
         // TODO: Check Pose position to ensure it is correct
         MecanumDrive drive = new MecanumDrive(hardwareMap, new Pose2d(0, 0, Math.toRadians(90)));
 
         trajectoryAction1 = drive.actionBuilder(drive.pose)
                 // TODO: Change variables to be usd according to Jerry's field
-                .lineToYSplineHeading(33, Math.toRadians(0))
-                .waitSeconds(2)
+                //.lineToYSplineHeading(33, Math.toRadians(0))
+                //.waitSeconds(2)
                 .setTangent(Math.toRadians(90))
                 .lineToY(48)
                 .setTangent(Math.toRadians(0))
@@ -46,14 +47,14 @@ public class RRTest extends LinearOpMode{
                 .waitSeconds(3)
                 .build();
 
+
         if (isStopRequested()) return;
 
         trajectoryActionChosen = trajectoryAction1;
 
         Actions.runBlocking(
                 new SequentialAction(
-                        trajectoryActionChosen,
-                        trajectoryActionCloseOut
+                        trajectoryActionChosen
                 )
         );
     }
